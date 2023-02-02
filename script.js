@@ -26,7 +26,7 @@ operatorButtons.forEach(element => {
         firstInput = display.textContent * 1;
         history.textContent = firstInput;
         operatorInput = element.textContent;
-        history.textContent += operatorInput;
+        history.textContent = history.textContent + " " + operatorInput;
         display.textContent = "";
     });
 });
@@ -41,6 +41,9 @@ clearButton.addEventListener('click', () => {
 });
 
 function equal(){
+    if (firstInput == 0){
+        return;
+    }
     secondInput = display.textContent * 1;
     let sum = operate(operatorInput, firstInput, secondInput);
     history.textContent = "";
